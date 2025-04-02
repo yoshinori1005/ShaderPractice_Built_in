@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_WipeCircle
-  m_Shader: {fileID: 4800000, guid: c99f060121e6a304ca25dad7eebc0c94, type: 3}
+  m_Name: Unlit_Line
+  m_Shader: {fileID: 4800000, guid: 795a665031a0d464e89565ff2982500a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -26,6 +26,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Radius: 2
-    m_Colors: []
+    - _StepFactor: 0.3
+    - _Thickness: 0.05
+    m_Colors:
+    - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
