@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4197659, g: 0.3205601, b: 0.19378105, a: 1}
+  m_IndirectSpecularColor: {r: 0.6951729, g: 0.5308953, b: 0.3209317, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -500,7 +500,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 87c45ffdad96b344a9a0354ee781df27, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b7a270f25cf5fd743af2206c0be064f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 35ea7abc7846d394888cff8069187c1c, type: 2}
     - target: {fileID: 919132149155446097, guid: 87c45ffdad96b344a9a0354ee781df27, type: 3}
       propertyPath: m_Name
       value: dragon
@@ -1009,7 +1009,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d70938565f2c7f34bb27e5db8d0b6966, type: 2}
+  - {fileID: 2100000, guid: 63b49e1868c7d544e899c4400bbff86b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
