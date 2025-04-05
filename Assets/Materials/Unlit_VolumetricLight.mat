@@ -23,8 +23,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Contrast: 0.5
-    - _EdgeFade: 2
-    - _FadeDistance: 2
+    - _EdgeFade: 2.5
+    - _FadeDistance: 3
     - _Intensity: 3
     - _NoiseFactor: 0.5
     - _NoiseOctaves: 3
