@@ -4,8 +4,8 @@ Shader "Unlit/VolumetricLight"
     {
         _Color("Light Color", Color) = (1, 1, 1, 1)
         _Intensity("Intensity", Range(0, 10)) = 3
-        _FadeDistance("Fade Distance", Range(0, 5)) = 3
-        _EdgeFade("Edge Fade", Range(0, 5)) = 2.5
+        _FadeDistance("Fade Distance", Range(0, 5)) = 0.5
+        _EdgeFade("Edge Fade", Range(0.1, 10)) = 2.5
         [Space] _NoiseScale("Noise Scale", Range(0.1, 10)) = 7
         _Contrast("Noise Contrast", Range(0, 1)) = 0.5
         _NoiseOctaves("Noise Octaves", Range(1, 4)) = 3
@@ -18,12 +18,12 @@ Shader "Unlit/VolumetricLight"
     {
         Tags
         {
-            "RenderType" = "Transparent"
+            "RenderType" = "Opaque"
             "Queue" = "Transparent"
         }
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
-        Cull Off
+        Cull Back
 
         Pass
         {
@@ -44,7 +44,8 @@ Shader "Unlit/VolumetricLight"
             {
                 float2 uv : TEXCOORD0;
                 float4 pos : SV_POSITION;
-                float3 normal : NORMAL;
+                float3 normal : TEXCOORD1;
+                float3 viewDir : TEXCOORD2;
             };
 
             // ノイズパラメーター
@@ -104,6 +105,9 @@ Shader "Unlit/VolumetricLight"
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
+                float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                o.normal = UnityObjectToWorldNormal(v.normal);
+                o.viewDir = normalize(WorldSpaceViewDir(v.vertex));
                 o.uv = v.uv;
                 return o;
             }
@@ -115,13 +119,17 @@ Shader "Unlit/VolumetricLight"
                 float noiseValue = fbm(noiseUV);
 
                 noiseValue = saturate(noiseValue - 0.5) * _Contrast;
+                float fresnel = saturate(dot(normalize(i.normal), normalize(i.viewDir)));
+                fresnel = pow(fresnel, _EdgeFade);
 
                 float distanceFactor = 1.0 - saturate(1.0 - i.uv.y / _FadeDistance);
-                float edgeFade = smoothstep(1.0, 1.0 - _EdgeFade, abs(i.uv.x * 2.0 - 1.0));
-                float noiseEffect = lerp(1.0, noiseValue, _NoiseFactor);
-                float alpha = distanceFactor * edgeFade * noiseEffect * _Intensity;
+                // float edgeFade = smoothstep(1.0, 1.0 - _EdgeFade, abs(i.uv.x * 2.0 - 1.0));
+                float noiseEffect = lerp(1.0, noiseValue * distanceFactor, _NoiseFactor);
+                float alpha = distanceFactor * noiseEffect * fresnel;
+                float4 col = _Color * _Intensity;
 
-                return fixed4(_Color.rgb, alpha);
+                // return fixed4(col.rgb, alpha);
+                return alpha;
             }
             ENDCG
         }
