@@ -73,8 +73,8 @@ Shader "Unlit/GeometryAnimation"
             void geom(triangle appdata input[3], uint pid : SV_PrimitiveID, inout TriangleStream<g2f> stream)
             {
                 // 法線を計算
-                float vec1 = input[1].vertex - input[0].vertex;
-                float vec2 = input[2].vertex - input[0].vertex;
+                float3 vec1 = input[1].vertex - input[0].vertex;
+                float3 vec2 = input[2].vertex - input[0].vertex;
                 float3 normal = normalize(cross(vec1, vec2));
 
                 // 1 枚のポリゴンの中心

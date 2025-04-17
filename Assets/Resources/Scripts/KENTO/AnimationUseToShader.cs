@@ -16,7 +16,7 @@ public class AnimationUseToShader : MonoBehaviour
     /// <summary>
     /// ジオメトリシェーダーを適用したオブジェクトのレンダラー
     /// </summary>
-    [SerializeField] private Renderer renderer;
+    [SerializeField] private Renderer renderTarget;
 
     // Shader 側に用意した定義済みの値を受け取る変数
     private string gravityFactor = "_GravityFactor";
@@ -29,7 +29,7 @@ public class AnimationUseToShader : MonoBehaviour
     void Start()
     {
         // Editor 上でマテリアルのインスタンスを作ろうとするとエラーがでるので shaderMaterial を利用
-        material = renderer.sharedMaterial;
+        material = renderTarget.sharedMaterial;
     }
 
     void Update()

@@ -25,6 +25,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _ColorBorder: 0.5
+    - _SquareNum: 10
+    m_Colors:
+    - _MoonColor: {r: 1, g: 1, b: 0, a: 1}
+    - _TopColor: {r: 0.26, g: 0.33, b: 0.51, a: 1}
+    - _UnderColor: {r: 0.18, g: 0.37, b: 0.6, a: 1}
   m_BuildTextureStacks: []

@@ -9,7 +9,7 @@ public class MouseRayHitPointSendToShader : MonoBehaviour
     /// ポインターを出したいオブジェクトのレンダラー
     /// 前提:Shader は座標受け取りに対応したものを適用
     /// </summary>
-    [SerializeField] private Renderer renderer;
+    [SerializeField] private Renderer renderTarget;
 
     /// <summary>
     /// Shader 側で定義済みの座標を受け取る変数
@@ -19,7 +19,7 @@ public class MouseRayHitPointSendToShader : MonoBehaviour
 
     void Start()
     {
-        material = renderer.material;
+        material = renderTarget.material;
     }
 
     void Update()
