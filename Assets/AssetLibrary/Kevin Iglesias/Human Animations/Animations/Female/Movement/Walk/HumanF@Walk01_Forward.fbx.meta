@@ -3,7 +3,7 @@ guid: d18c13a5b4b923244a524a76a303e61d
 labels:
 - Animation
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 21202
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: HumanF@Walk01_Forward
+      name: Walk
       takeName: Untitled
       internalID: 3094330708855449807
       firstFrame: 0
@@ -187,7 +187,6 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -215,7 +214,6 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -954,8 +952,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  importBlendShapeDeformPercent: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
