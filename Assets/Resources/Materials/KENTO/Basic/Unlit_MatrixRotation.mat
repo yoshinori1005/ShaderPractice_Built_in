@@ -7,9 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_GeometryWireFrame
-  m_Shader: {fileID: 4800000, guid: 9c904511bf5530947bd9c7ebcaefc1bf, type: 3}
-  m_ValidKeywords: []
+  m_Name: Unlit_MatrixRotation
+  m_Shader: {fileID: 4800000, guid: 12b2791622635a0479616ffcba125c3f, type: 3}
+  m_ValidKeywords:
+  - _AXIS_X
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,11 +22,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 093ef80596e5ce34e8048a1a9b5fccac, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.11044855, g: 0.13795725, b: 0.3207547, a: 1}
+    m_Floats:
+    - _Axis: 0
+    - _Rotation: 0
+    m_Colors: []
   m_BuildTextureStacks: []
