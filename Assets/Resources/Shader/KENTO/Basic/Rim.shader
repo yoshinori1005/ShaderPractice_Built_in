@@ -25,6 +25,8 @@ Shader "Unlit/Rim"
                 ColorMask 0
             }
 
+            Name "RIM"
+
             Pass
             {
                 CGPROGRAM

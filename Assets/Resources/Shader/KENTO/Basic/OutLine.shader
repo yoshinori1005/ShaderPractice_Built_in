@@ -19,6 +19,8 @@ Shader "Unlit/OutLine"
         // 他のShaderのパスを利用
         UsePass "Unlit/ToonLit/TOON"
 
+        Name "OUTLINE"
+        
         // アウトラインを描画
         Pass
         {
