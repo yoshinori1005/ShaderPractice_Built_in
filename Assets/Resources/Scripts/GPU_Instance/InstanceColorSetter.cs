@@ -5,7 +5,7 @@ public class InstanceColorSetter : MonoBehaviour
 {
     [SerializeField] Color color;
 
-    Renderer renderer;
+    Renderer objRender;
     MaterialPropertyBlock props;
 
     static readonly int id = Shader.PropertyToID("_Color");
@@ -13,13 +13,13 @@ public class InstanceColorSetter : MonoBehaviour
     void Start()
     {
         color = Random.ColorHSV();
-        renderer = GetComponent<Renderer>();
+        objRender = GetComponent<Renderer>();
         props = new MaterialPropertyBlock();
     }
 
     void Update()
     {
         props.SetColor(id, color);
-        renderer.SetPropertyBlock(props);
+        objRender.SetPropertyBlock(props);
     }
 }

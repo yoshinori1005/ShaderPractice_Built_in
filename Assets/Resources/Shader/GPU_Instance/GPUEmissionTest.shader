@@ -2,7 +2,7 @@ Shader "Unlit/GPUEmissionTest"
 {
     Properties
     {
-        [HDR] _Color("Color", Color) = (1, 1, 1, 1)
+        _Color("Color", Color) = (1, 1, 1, 1)
     }
     SubShader
     {
@@ -45,7 +45,7 @@ Shader "Unlit/GPUEmissionTest"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            float4 frag (v2f i) : SV_Target
             {
                 UNITY_SETUP_INSTANCE_ID(i);
                 return UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
