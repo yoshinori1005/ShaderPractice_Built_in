@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_LavaFlowMap
-  m_Shader: {fileID: 4800000, guid: 79cfbb47470bde645adb398e39297caf, type: 3}
+  m_Name: Custom_FixedTessellation
+  m_Shader: {fileID: 4800000, guid: e3049be68fb14da438de63963b045fbb, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,16 +20,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: b1da6ba822900664a93a1ec3a490c51e, type: 3}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: ec4617e7f2a459a4baf7f2d90888fc02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DisplaceMap:
+        m_Texture: {fileID: 2800000, guid: e67dfa43fcccb3e419a4956c6d5c5e12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6df4d33c4f47175419a3801f3c142617, type: 3}
+        m_Texture: {fileID: 2800000, guid: c60c18afeac200c43b45d4bd3800eb41, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Speed: 0.27
-    m_Colors: []
+    - _DisplaceVal: 0
+    - _Glossiness: 0.5
+    - _Metallic: 0
+    - _TexVal: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

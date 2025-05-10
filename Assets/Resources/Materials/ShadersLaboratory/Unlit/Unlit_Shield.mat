@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_LavaFlowMap
-  m_Shader: {fileID: 4800000, guid: 79cfbb47470bde645adb398e39297caf, type: 3}
+  m_Name: Unlit_Shield
+  m_Shader: {fileID: 4800000, guid: 1a8b7834a4b2ced42b3a1bd6a86be365, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,16 +20,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: b1da6ba822900664a93a1ec3a490c51e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6df4d33c4f47175419a3801f3c142617, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3df91254de9a5864eba59e23f6c68de4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Speed: 0.27
-    m_Colors: []
+    - _RimEffect: 0.411
+    m_Colors:
+    - _Color: {r: 0.26886788, g: 0.6779068, b: 1, a: 1}
   m_BuildTextureStacks: []
