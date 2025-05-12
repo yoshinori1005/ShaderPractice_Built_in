@@ -46,21 +46,28 @@ Shader "Unlit/VHSEffect"
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+                // ノイズ用映像にズレを加えたUV(位置ずれした映像)
                 o.uv2 = v.texcoord + float2(_OffsetNoiseX - 0.2f, _OffsetNoiseY);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
+                // 横方向(uv.x)にコサイン波による歪み→映像がビリビリ震える
+                // 縦方向(uv.y)に_OffsetPosYを加えて映像が縦スクロール
                 i.uv = float2(
                 frac(i.uv.x + cos((i.uv.y + _CosTime.y) * 100) / _OffsetDistortion),
                 frac(i.uv.y + _OffsetPosY)
                 );
 
+                // 色のにじみ(RGBずらし)
+                // 赤はそのまま、緑は右下方向にズラしてサンプリング、青は左上方向にズラしてサンプリング
                 fixed4 col = tex2D(_MainTex, i.uv);
                 col.g = tex2D(_MainTex, i.uv + float2(_OffsetColor, _OffsetColor)).g;
                 col.b = tex2D(_MainTex, i.uv + float2(- _OffsetColor, - _OffsetColor)).b;
 
+                // _SecondaryTexの赤チャンネルが_Intensityより大きければ、その部分にノイズを表示
+                // 中央付近の一部だけ(uv.y ≒ 0.5)に限定して表示→VHSにある「上下に走る線ノイズ」
                 fixed4 col2 = tex2D(_SecondaryTex, i.uv2);
 
                 return lerp(
