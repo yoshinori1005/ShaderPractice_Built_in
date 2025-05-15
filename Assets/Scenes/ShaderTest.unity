@@ -2051,7 +2051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fd4d02bbd9d4e43a55dab828bca590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: c4366dc0e2a96084b8f8f5ad5729405c, type: 2}
+  material: {fileID: 2100000, guid: bf6cb831de8c0984c9007f42f40130c5, type: 2}
 --- !u!114 &963194237
 MonoBehaviour:
   m_ObjectHideFlags: 0
