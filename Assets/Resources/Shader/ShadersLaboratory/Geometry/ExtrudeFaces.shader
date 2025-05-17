@@ -70,7 +70,7 @@ Shader "Unlit/ExtrudeFaces"
                     o.col = fixed4(1.0, 1.0, 1.0, 1.0);
                     stream.Append(o);
 
-                    int inext = (i + 1) % 3;
+                    int inext = (i + 1.0) % 3.0;
 
                     o.pos = UnityObjectToClipPos(IN[inext].vertex);
                     o.uv = IN[inext].uv;
@@ -98,10 +98,10 @@ Shader "Unlit/ExtrudeFaces"
                 }
 
                 // 押し出した頂点を白で描画
-                for(int i = 0; i < 3; i ++)
+                for(int k = 0; k < 3; k ++)
                 {
-                    o.pos = UnityObjectToClipPos(IN[i].vertex + float4(normalFace, 0) * _Factor);
-                    o.uv = IN[i].uv;
+                    o.pos = UnityObjectToClipPos(IN[k].vertex + float4(normalFace, 0) * _Factor);
+                    o.uv = IN[k].uv;
                     o.col = fixed4(1.0, 1.0, 1.0, 1.0);
                     stream.Append(o);
                 }
@@ -109,10 +109,10 @@ Shader "Unlit/ExtrudeFaces"
                 stream.RestartStrip();
 
                 // 押し出した頂点を黒で描画
-                for(int i = 0; i < 3; i ++)
+                for(int j = 0; j < 3; j ++)
                 {
-                    o.pos = UnityObjectToClipPos(IN[i].vertex);
-                    o.uv = IN[i].uv;
+                    o.pos = UnityObjectToClipPos(IN[j].vertex);
+                    o.uv = IN[j].uv;
                     o.col = fixed4(0.0, 0.0, 0.0, 1.0);
                     stream.Append(o);
                 }

@@ -70,7 +70,7 @@ Shader "Unlit/TriangleToPyramids"
                     o.col = fixed4(0.0, 0.0, 0.0, 1.0);
                     stream.Append(o);
 
-                    int inext = (i + 1) % 3;
+                    int inext = (i + 1.0) % 3.0;
                     o.pos = UnityObjectToClipPos(IN[inext].vertex);
                     o.uv = IN[inext].uv;
                     o.col = fixed4(0.0, 0.0, 0.0, 1.0);

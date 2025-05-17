@@ -2,7 +2,7 @@ Shader "Custom/DiscardFragment"
 {
     Properties
     {
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
+        _MainTex ("Main Texture", 2D) = "white" {}
         _InsideColor ("Inside Color", Color) = (1, 0, 0, 1)
         _OutsideColor("Outside Color", Color) = (1, 1, 1, 1)
         _Value("Value", Range(0, 1)) = 0

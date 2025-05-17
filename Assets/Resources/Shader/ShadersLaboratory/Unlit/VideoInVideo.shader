@@ -23,7 +23,7 @@ Shader "Unlit/VideoInVideo"
             {
                 float4 pos : SV_POSITION;
                 float2 uv1 : TEXCOORD0;
-                float2 uv2 : TEXCOORD0;
+                float2 uv2 : TEXCOORD1;
             };
 
             sampler2D _MainTex;
